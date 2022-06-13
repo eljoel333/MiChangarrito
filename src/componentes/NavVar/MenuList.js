@@ -1,17 +1,17 @@
 const OptionsMenu= [
     {
         titulo:'Procesadores',
-        url:'#',
+        url:'/category/procesadores',
         className: 'nav-links'
     },
     {
         titulo:'Tarjeta Madre',
-        url:'#',
+        url:'/category/motherboard',
         className: 'nav-links'
     },
     {
         titulo:'Sillas Gamers',
-        url:'#',
+        url:'/category/sillas gamer',
         className: 'nav-links'
     },
     // {
