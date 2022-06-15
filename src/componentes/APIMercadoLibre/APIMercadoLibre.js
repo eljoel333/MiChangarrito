@@ -47,3 +47,19 @@ export async function getProductsById(id) {
       console.error(error);
     }
   }
+
+  export async function getProductsByCategoryById(categoria, id) {
+    try {
+      debugger;
+      const response = await fetch(`${API_URL + categoria}`);
+      const data = await response.json();
+  
+       let res = data.results.filter((x) => x.id === id);
+     
+      console.log(res);
+      return res;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getProductsByCategory } from "../APIMercadoLibre/APIMercadoLibre";
+import { getProductsByCategory, getProductsByCategoryById } from "../APIMercadoLibre/APIMercadoLibre";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
@@ -11,10 +11,11 @@ const ItemDetailContainer = (category) =>{
 const params = useParams();
 
 console.log('params,',params);
-
+const {categoryId, productId} = params;
+console.log('itemdeilcon:', categoryId)
     useEffect(()=>{
         debugger;
-        getProductsByCategory(params.productId ).then(respuesta=>{
+        getProductsByCategoryById(categoryId, productId ).then(respuesta=>{
             setProductDetail(respuesta);
 
         })
@@ -26,7 +27,7 @@ debugger;
 
     return (
         <>
-            <h1>Detalle del productoooo</h1>
+            <h1>Detalle del producto seleccionado:</h1>
             <ItemDetail products={productDetail}  />
             
         </>

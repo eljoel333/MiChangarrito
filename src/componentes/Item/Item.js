@@ -1,12 +1,15 @@
 // import './Item.css'
 import { Link } from 'react-router-dom'
+import { useState, createContext, useContext } from "react";
 
-const Item = ({id, title, thumbnail, price}) => {
+const Item = ({id, title, thumbnail, price, cat}) => {
+
+ 
     return (
         <article className="CardItem">
             <header className="Header">
                 <h2 className="ItemHeader">
-                    {title}
+                    {title}{cat}
                 </h2>
             </header>
             <picture>
@@ -14,11 +17,11 @@ const Item = ({id, title, thumbnail, price}) => {
             </picture>
             <section>
                 <p className="Info">
-                    Preciooo: ${price}
+                    Precio: ${price}
                 </p>
             </section>           
             <footer className='ItemFooter'>
-                <Link to={`/detail/${id}`} className='Option'>Ver detalle</Link>
+                <Link to={`/category/'${cat}'/detail/${id}`} className='Option'>Ver detalle</Link>
             </footer>
         </article>
     )

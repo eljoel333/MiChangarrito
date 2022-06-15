@@ -12,16 +12,16 @@ function App() {
       <BrowserRouter>
       <NavBar />
       <Routes>
-        <Route path='/' element={<ItemListContainer></ItemListContainer>}></Route>
+        <Route path='/' element={<ItemListContainer greeting='hola greetin'></ItemListContainer>}></Route>
         <Route path='/category/:categoryId' element={<ItemListContainer></ItemListContainer>}></Route>
         <Route path='/detail/:productId' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
-        <Route path='/user/manage(/:id)(/:type)' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
+        <Route path='/category/:categoryId/detail/:productId' element={<ItemDetailContainer></ItemDetailContainer>}></Route>
         
-      </Routes>
+        
+      </Routes> 
 
-      </BrowserRouter>
-   
-    
+      </BrowserRouter> 
+
      
     </div>
   );

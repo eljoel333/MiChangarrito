@@ -1,13 +1,14 @@
 // import Item from "../Item/Item"
 import Item from '../Item/Item'
-const ItemList = ({ products }) => {
-    console.log('itemprod', products)
+const ItemList = (props) => {
+    console.log('itemprod', props.productos, props.cat)
+    
     return(
         
         <>
         
-        <h1>Hola Mercado</h1>
-        {products.map(prod => <Item key={prod.id} {...prod}/>)}
+        <h1>Hola Mercado </h1>
+        {props.productos.map(prod => <Item  key={prod.id} {...prod} cat={props.cat} />)}
         
         </>
     )

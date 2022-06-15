@@ -8,9 +8,9 @@ import { useParams } from 'react-router-dom'
 
 const ItemListContainer = (props) => {
     const { categoryId } = useParams()
-const params = useParams();
+    const params = useParams();
 
-    console.log('paramsxcgvxcv,',params);
+    console.log('categoriaItemListContainer,',categoryId);
 
     const [products, setProducts] = useState([])
 
@@ -23,11 +23,11 @@ const params = useParams();
         })
     }, [categoryId])
 console.log('productodds', products)
-   
+
     return (
         <div>
             <h1 className='Titulo'>{props.greeting}</h1>
-            <ItemList products={products}/>
+            <ItemList productos={products} cat={categoryId ===undefined ?'pantallas':categoryId} />
         </div>
     )
 }

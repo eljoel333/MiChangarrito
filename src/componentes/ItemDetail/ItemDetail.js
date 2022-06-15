@@ -4,7 +4,7 @@ const ItemDetail = ({ products }) => {
   console.log("tittlee", products);
   return (
     <>
-      <h2>Tarjeta del detalle de mi producto seleccionado</h2>
+    
       {products.map((prod) => (
         <article className="CardItem">
           <header className="Header">

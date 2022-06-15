@@ -1,7 +1,15 @@
 import OptionsMenu from "../NavVar/MenuList";
 import { Link,NavLink } from "react-router-dom";
+import {useState, createContext, useContext  }from 'react';
 
 export default function NavBar() {
+
+  
+// const CatContext = createContext();
+
+// const [cat, setCat] = useState('');
+
+
   return (
     <>
       <nav className="NavbarItems">
@@ -12,11 +20,11 @@ export default function NavBar() {
         <ul className="nav-menu">
           {OptionsMenu.map((item, index) => {
             return (
-              <li key={index}>
+              <li key={index} categoria = {item.categoria}>
                
               
 
-              <NavLink to={item.url} className={item.className}> {item.titulo}</NavLink>
+              <NavLink to={item.url} className={item.className} > {item.titulo}  </NavLink>
 
               </li>
 
