@@ -26,7 +26,7 @@ console.log('productodds', products)
 
     return (
         <div>
-            <h1 className='Titulo'>{props.greeting}</h1>
+           
             <ItemList productos={products} cat={categoryId ===undefined ?'pantallas':categoryId} />
         </div>
     )
