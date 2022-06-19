@@ -4,7 +4,7 @@ const API_URL = `https://api.mercadolibre.com/sites/MLA/search?q=`;
 
 export async function getProductsDefault(categoria = 'pantallas') {
   try {
-    debugger;
+   
 
     const response = await fetch(`${API_URL + categoria}`);
     const data = await response.json();
@@ -19,7 +19,7 @@ export async function getProductsDefault(categoria = 'pantallas') {
 
 export async function getProductsByCategory(categoria = 'pantallas') {
   try {
-    debugger;
+   
     const response = await fetch(`${API_URL + categoria}`);
     const data = await response.json();
 
@@ -35,7 +35,7 @@ export async function getProductsByCategory(categoria = 'pantallas') {
 
 export async function getProductsById(id) {
     try {
-      debugger;
+    
       const response = await fetch(`${API_URL + 'lap'}`);
       const data = await response.json();
   
@@ -50,7 +50,7 @@ export async function getProductsById(id) {
 
   export async function getProductsByCategoryById(categoria, id) {
     try {
-      debugger;
+     
       const response = await fetch(`${API_URL + categoria}`);
       const data = await response.json();
   

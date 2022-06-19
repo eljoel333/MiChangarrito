@@ -4,9 +4,13 @@ import { useState, createContext, useContext } from "react";
 
 const Item = ({id, title, thumbnail, price, cat}) => {
 
+    const handleClick = (e)=>{
+        e.stopPropagation()
+        console.log('click en item'); 
+    }
  
     return (
-        <article className="CardItem">
+        <article className="CardItem" onClick={handleClick}>
             <header className="Header">
                 <h2 className="ItemHeader">
                     {title}{cat}
