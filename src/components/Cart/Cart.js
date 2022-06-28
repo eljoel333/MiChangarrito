@@ -92,7 +92,7 @@ const Cart = () => {
 
     return (
         <>
-            <h1>Cart</h1>
+            <h1>Tu carrito de compras</h1>
             <CartItemList productsAdded={cart}/>
             <h3>Total: ${total}</h3>
             <Button variant="danger" onClick={() => clearCart()} >Limpiar carrito</Button>
