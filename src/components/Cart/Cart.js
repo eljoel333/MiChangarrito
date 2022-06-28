@@ -6,6 +6,7 @@ import { useNotification } from "../../notification/Notification"
 
 import { addDoc, collection, writeBatch, getDocs, query, where, documentId } from 'firebase/firestore'
 import { db } from '../../services/firebase/index'
+import Button from 'react-bootstrap/Button';
 
 const Cart = () => {
     const [loading, setLoading] = useState(false)
@@ -94,8 +95,8 @@ const Cart = () => {
             <h1>Cart</h1>
             <CartItemList productsAdded={cart}/>
             <h3>Total: ${total}</h3>
-            <button onClick={() => clearCart()} className="Button">Limpiar carrito</button>
-            <button onClick={handleCreateOrder} className="Button">Generar Orden</button>
+            <Button variant="danger" onClick={() => clearCart()} >Limpiar carrito</Button>
+            <Button variant="success" onClick={handleCreateOrder} >Generar Orden</Button>
             {/* <button onClick={handleUpdateStock} className="Button">Stock 1000</button> */}
         </>
     )
