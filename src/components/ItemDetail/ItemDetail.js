@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import {useNotification }from '../../notification/Notification'
 import Card from "react-bootstrap/Card";
 import Col from 'react-bootstrap/Col';
-
+import { ToastContainer, toast } from 'react-toastify';
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
     const [quantityAdded, setQuantityAdded] = useState(0)
@@ -18,12 +18,14 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
 
     const handleOnAdd = (quantity) => {
-        setNotification('error',`se agregaron ${quantity} ${name}`)
+        // setNotification('error',`se agregaron ${quantity} ${name}`)
+        toast(`se agregaron ${quantity} ${name}`)
         addItem({ id, name, price, quantity})
         setQuantityAdded(quantity)
     }
 
     return (
+      <>
         <Col  md={12} xs={12} className="g-4">
      
        
@@ -53,6 +55,8 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
      
     
     </Col>
+    <ToastContainer />
+    </>
     )
 }
 
