@@ -17,7 +17,7 @@ const NavBar = () => {
           <Nav className="me-auto">
           <Nav.Link className="colorA">
               <NavLink
-                to="/category/celular"
+                to="/category/montaña"
                 className={({ isActive }) =>
                   isActive ? "ActiveOption colorA" : "Option colorA"
                 }
@@ -26,7 +26,7 @@ const NavBar = () => {
               </NavLink>
             </Nav.Link> <Nav.Link className="colorA">
               <NavLink
-                to="/category/celular"
+                to="/category/ruta"
                 className={({ isActive }) =>
                   isActive ? "ActiveOption colorA" : "Option colorA"
                 }
@@ -35,7 +35,7 @@ const NavBar = () => {
               </NavLink>
             </Nav.Link> <Nav.Link className="colorA">
               <NavLink
-                to="/category/celular"
+                to="/category/ciudad"
                 className={({ isActive }) =>
                   isActive ? "ActiveOption colorA" : "Option colorA"
                 }
@@ -45,7 +45,7 @@ const NavBar = () => {
             </Nav.Link>
             <Nav.Link>
               <NavLink
-                to="/category/tablet"
+                to="/category/electrica"
                 className={({ isActive }) =>
                   isActive ? "ActiveOption colorA" : "Option colorA"
                 }
@@ -55,7 +55,7 @@ const NavBar = () => {
             </Nav.Link>
             <Nav.Link>
               <NavLink
-                to="/category/notebook"
+                to="/category/equipo"
                 className={({ isActive }) =>
                   isActive ? "ActiveOption colorA" : "Option colorA"
                 }
