@@ -2,47 +2,65 @@
 import CartWidget from "../CartWidget/CartWidget";
 import { Link, NavLink } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
-
+import './NavBar.css'
 const NavBar = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
+    <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+      <Container fluid>
         <Navbar.Brand>
-          <Link to="/">
-            <h3>Mi Changarrito</h3>
+          <Link className="colorA" to="/">
+            <h3>Bike StoReact</h3>
           </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-md-center">
           <Nav className="me-auto">
-            <Nav.Link>
+          <Nav.Link className="colorA">
               <NavLink
                 to="/category/celular"
                 className={({ isActive }) =>
-                  isActive ? "ActiveOption" : "Option"
+                  isActive ? "ActiveOption colorA" : "Option colorA"
                 }
               >
-                Celular
+                Montaña
+              </NavLink>
+            </Nav.Link> <Nav.Link className="colorA">
+              <NavLink
+                to="/category/celular"
+                className={({ isActive }) =>
+                  isActive ? "ActiveOption colorA" : "Option colorA"
+                }
+              >
+                Ruta
+              </NavLink>
+            </Nav.Link> <Nav.Link className="colorA">
+              <NavLink
+                to="/category/celular"
+                className={({ isActive }) =>
+                  isActive ? "ActiveOption colorA" : "Option colorA"
+                }
+              >
+                Ciudad
               </NavLink>
             </Nav.Link>
             <Nav.Link>
               <NavLink
                 to="/category/tablet"
                 className={({ isActive }) =>
-                  isActive ? "ActiveOption" : "Option"
+                  isActive ? "ActiveOption colorA" : "Option colorA"
                 }
               >
-                Tablet
+                Eléctricas
               </NavLink>
             </Nav.Link>
             <Nav.Link>
               <NavLink
                 to="/category/notebook"
                 className={({ isActive }) =>
-                  isActive ? "ActiveOption" : "Option"
+                  isActive ? "ActiveOption colorA" : "Option colorA"
                 }
               >
-                Notebook
+                Equipo
               </NavLink>
             </Nav.Link>
           </Nav>

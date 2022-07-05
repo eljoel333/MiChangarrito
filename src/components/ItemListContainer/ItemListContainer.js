@@ -6,7 +6,7 @@ import { getProducts } from '../../services/firebase/firestore'
 import { useAsync } from '../../hooks/useAsync'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Container from 'react-bootstrap/Container'
 
 const ItemListContainer = (props) => {
 
@@ -24,7 +24,8 @@ const ItemListContainer = (props) => {
     }
 
     return(
-        <div>
+        <Container>
+           
             <h1>{props.greeting}</h1>
             { data.length > 0 
                 ? <ItemList products={data}/>
@@ -32,7 +33,8 @@ const ItemListContainer = (props) => {
             }
              <button onClick={notify}>Notify!</button>
         <ToastContainer />
-        </div>
+       
+        </Container>
     )
 }
 

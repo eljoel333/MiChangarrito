@@ -12,7 +12,7 @@ const Item = ({ id, name, img, price }) => {
   return (
     <Col  md={4} xs={6} className="g-4">
      
-        <Col>
+       
           <Card>
             <Card.Img variant="top" src={img} />
             <Card.Body>
@@ -25,7 +25,7 @@ const Item = ({ id, name, img, price }) => {
               </Card.Text>
             </Card.Body>
           </Card>
-        </Col>
+       
     
     </Col>
   );

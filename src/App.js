@@ -13,7 +13,7 @@ import {Container, Navbar, Nav} from 'react-bootstrap';
 
 function App() {
   return (
-    <div className="App" >
+    <div  >
       <NotificationProvider>
         <CartProvider>
           <BrowserRouter>

@@ -11,8 +11,8 @@ const CartWidget = () => {
     const navigate = useNavigate()
 
     return(
-        <div className="CartWidget" onClick={() => navigate('/cart')}>
-            <img src="/images/cart.svg" alt='cart' className='CartImg'/>
+        <div className='colorA' onClick={() => navigate('/cart')}>
+            <img src="/images/cart.svg" alt='cart' />
             { totalQuantity }
         </div>
     );

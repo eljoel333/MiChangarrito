@@ -1,13 +1,15 @@
 
 
 import Item from '../Item/Item'
+import Row from 'react-bootstrap/Row'
+
 
 const ItemList = ({products}) => {
 
     return(
-        <div className=''>
+        <Row className="justify-content-md-center">
             {products.map(prod => <Item key={prod.id} {...prod}/>)}
-        </div>    
+        </Row>    
     )
 }
 
