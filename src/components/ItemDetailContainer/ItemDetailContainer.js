@@ -1,49 +1,55 @@
-import { useState, useEffect} from 'react'
-import { getProductById } from '../../asyncmock'
-import ItemDetail from '../ItemDetail/ItemDetail'
-import { useParams } from 'react-router-dom'
-import { getDoc, doc } from 'firebase/firestore'
-import { db } from '../../services/firebase'
+import { useState, useEffect } from "react";
+import { getProductById } from "../../asyncmock";
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { useParams } from "react-router-dom";
+import { getDoc, doc } from "firebase/firestore";
+import { db } from "../../services/firebase";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
 
 const ItemDetailContainer = () => {
-    const [product, setProduct] = useState()
-    const [loading, setLoading] = useState(true);
+  const [product, setProduct] = useState();
+  const [loading, setLoading] = useState(true);
 
-     //Este id proviene de la url
-    const { productId } = useParams()
+  //Este id proviene de la url
+  const { productId } = useParams();
 
-    useEffect(() => {
+  useEffect(() => {
+    const docRef = doc(db, "products", productId);
 
-        const docRef = doc(db, 'products', productId);
+    getDoc(docRef)
+      .then((doc) => {
+        const productFormatted = { id: doc.id, ...doc.data() };
+        setProduct(productFormatted);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
 
-        getDoc(docRef).then(doc=>{
-            const productFormatted = {id:doc.id, ...doc.data()}
-            setProduct(productFormatted)
+    // getProductById(productId).then(response => {
+    //     setProduct(response)
+    // })
+  }, [productId]);
 
-        }).catch(error=>{
-            console.log(error)
-        }).finally(()=>{
-            setLoading(false);
-        })
+  if (loading) {
+    return <h1>Cargando...</h1>;
+  }
 
-        // getProductById(productId).then(response => {
-        //     setProduct(response)
-        // })
-    }, [productId])
+  return (
+    <Container>
 
-    if(loading)
-    {
-        return(
-            <h1>Cargando...</h1>
-        )
-    }
+       <Row className="justify-content-md-center">
+       <h1>Detalle del producto</h1>
+      </Row>
 
-    return (
-        <>
-            <h1>Detalle del producto</h1>
-            <ItemDetail {...product} />
-        </>
-    )
-}
+      <Row className="justify-content-md-center">
+        <ItemDetail {...product} />
+      </Row>
+    </Container>
+  );
+};
 
-export default ItemDetailContainer
+export default ItemDetailContainer;

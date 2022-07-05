@@ -26,7 +26,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
     return (
         <Col  md={4} xs={6} className="g-4">
      
-        <Col>
+       
           <Card>
             <Card.Img variant="top" src={img} />
             <Card.Body>
@@ -35,14 +35,14 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
               Categoria: {category}
 
               </Card.Title>
-              <Card.Title>
+              <Card.Text className='text-justify'>
               Descripción: {description}
-              </Card.Title>
+              </Card.Text>
               <Card.Title></Card.Title>
               <Card.Text>
               Precio: ${price}
               </Card.Text>
-              <Card.Text>
+              <Card.Text className='text-center'>
               { quantityAdded === 0 
                     ?  <ItemCount stock={stock} onAdd={handleOnAdd} />
                     :  <Link to='/cart'>Terminar compra</Link>
@@ -50,7 +50,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
               </Card.Text>
             </Card.Body>
           </Card>
-        </Col>
+     
     
     </Col>
     )
