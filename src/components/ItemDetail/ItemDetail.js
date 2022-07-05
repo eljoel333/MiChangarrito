@@ -24,7 +24,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
     }
 
     return (
-        <Col  md={4} xs={6} className="g-4">
+        <Col  md={12} xs={12} className="g-4">
      
        
           <Card>
