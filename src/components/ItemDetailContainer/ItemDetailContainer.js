@@ -6,7 +6,7 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from "../../services/firebase";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import ClimbingBoxLoader  from "react-spinners/ClimbingBoxLoader";
+import PropagateLoader   from "react-spinners/PropagateLoader";
 
 
 const ItemDetailContainer = () => {
@@ -41,7 +41,7 @@ const ItemDetailContainer = () => {
       <>
         <Container fluid>
           <Row className="justify-content-md-center">
-            <ClimbingBoxLoader color="#36D7B7" />
+            <PropagateLoader  color="#36D7B7" />
           </Row>
         </Container>
       </>
