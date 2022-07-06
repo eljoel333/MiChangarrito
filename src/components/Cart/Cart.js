@@ -7,6 +7,7 @@ import { useNotification } from "../../notification/Notification"
 import { addDoc, collection, writeBatch, getDocs, query, where, documentId } from 'firebase/firestore'
 import { db } from '../../services/firebase/index'
 import Button from 'react-bootstrap/Button';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Cart = () => {
     const [loading, setLoading] = useState(false)
@@ -62,10 +63,14 @@ const Cart = () => {
             }).then(({ id }) => {
                 batch.commit()
                 clearCart()
-                setNotification('success',`Su orden se genero correctamente. El id de su orden es: ${id}`)
+                // setNotification('success',`Su orden se genero correctamente. El id de su orden es: ${id}`)
+
+                toast(`Su orden se genero correctamente. El id de su orden es: ${id}`);
             }).catch(error => {
                 if(error.type === 'out_of_stock') {
-                    setNotification('error','Hay productos que no tienen stock')
+                    // setNotification('error','Hay productos que no tienen stock')
+                toast(`Hay productos que no tienen stock`);
+
 
                 } else {
                     console.log(error)
@@ -98,6 +103,7 @@ const Cart = () => {
             <Button variant="danger" onClick={() => clearCart()} >Limpiar carrito</Button>
             <Button variant="success" onClick={handleCreateOrder} >Generar Orden</Button>
             {/* <button onClick={handleUpdateStock} className="Button">Stock 1000</button> */}
+           
         </>
     )
 }

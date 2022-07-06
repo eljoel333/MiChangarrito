@@ -1,18 +1,8 @@
 import { createContext, useContext, useState } from "react";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Notification = ({ message, severety }) => {
-  const NotifiStyle = {
-    position: "absolute",
-    top: 100,
-    right: 5,
-    width: "auto",
-    height: "auto",
-    backgroundColor: severety==='error' ?'red':"green",
-    color: "white",
-    padding: "10px 20px 10px 20px",
-    borderRadius: "10px",
-  };
-  return <div style={NotifiStyle}>{message}</div>;
+  toast("Wow so easy!");
 };
 
 const NotificationContext = createContext();
@@ -35,7 +25,7 @@ export const NotificationProvider = ({ children }) => {
   
   return (
     <NotificationContext.Provider value={setNotification}>
-        {msgConfig.message !==''&& <Notification message={msgConfig.message} severety={msgConfig.severity}></Notification>}
+        <ToastContainer theme="dark"/>
       {children}
     </NotificationContext.Provider>
   );

@@ -64,12 +64,13 @@ const NavBar = () => {
               </NavLink>
             </Nav.Link>
           </Nav>
-          <Nav>
+         
+        </Navbar.Collapse>
+        <Navbar.Brand>
             <Nav.Link>
               <CartWidget />
             </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+          </Navbar.Brand>
       </Container>
     </Navbar>
   );

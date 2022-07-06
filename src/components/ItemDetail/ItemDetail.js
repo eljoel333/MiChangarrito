@@ -8,6 +8,7 @@ import Card from "react-bootstrap/Card";
 import Col from 'react-bootstrap/Col';
 import { ToastContainer, toast } from 'react-toastify';
 
+
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
     const [quantityAdded, setQuantityAdded] = useState(0)
 
@@ -19,7 +20,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
 
     const handleOnAdd = (quantity) => {
         // setNotification('error',`se agregaron ${quantity} ${name}`)
-        toast(`se agregaron ${quantity} ${name}`)
+        toast(`Se agregaron ${quantity} ${name}, a tu carrito de compras.`)
         addItem({ id, name, price, quantity})
         setQuantityAdded(quantity)
     }
@@ -55,7 +56,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
      
     
     </Col>
-    <ToastContainer />
+    
     </>
     )
 }
