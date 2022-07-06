@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import PacmanLoader from "react-spinners/PacmanLoader";
+import ClimbingBoxLoader  from "react-spinners/ClimbingBoxLoader";
 
 const ItemListContainer = (props) => {
   const notify = () => toast("Wow so easy!");
@@ -24,7 +24,7 @@ const ItemListContainer = (props) => {
       <>
         <Container fluid >
         <Row  className="justify-content-md-center">
-          <PacmanLoader color="#34524B" />
+          <ClimbingBoxLoader  color="#36D7B7" />
           </Row>
         </Container>
       </>

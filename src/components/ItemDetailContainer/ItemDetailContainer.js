@@ -6,6 +6,8 @@ import { getDoc, doc } from "firebase/firestore";
 import { db } from "../../services/firebase";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
+import ClimbingBoxLoader  from "react-spinners/ClimbingBoxLoader";
+
 
 const ItemDetailContainer = () => {
   const [product, setProduct] = useState();
@@ -35,14 +37,21 @@ const ItemDetailContainer = () => {
   }, [productId]);
 
   if (loading) {
-    return <h1>Cargando...</h1>;
+    return (
+      <>
+        <Container fluid>
+          <Row className="justify-content-md-center">
+            <ClimbingBoxLoader color="#36D7B7" />
+          </Row>
+        </Container>
+      </>
+    );
   }
 
   return (
     <Container>
-
-       <Row className="justify-content-md-center">
-       <h1>Detalle del producto</h1>
+      <Row className="justify-content-md-center">
+        <h1>Detalle del producto</h1>
       </Row>
 
       <Row className="justify-content-md-center">
