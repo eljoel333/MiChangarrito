@@ -9,7 +9,7 @@ import { CartProvider } from "./context/CartContext";
 import { NotificationProvider } from "./notification/Notification";
 import Cart from './components/Cart/Cart';
 
-import {Container, Navbar, Nav} from 'react-bootstrap';
+
 
 function App() {
   return (
