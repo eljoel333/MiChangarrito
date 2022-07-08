@@ -4,6 +4,8 @@ import CartItemList from "../CartItemList/CartItemList.js";
 
 import { useNotification } from "../../notification/Notification";
 
+import FormShop from "../FormShop/FormShop";
+
 import {
   addDoc,
   collection,
@@ -112,6 +114,8 @@ const Cart = () => {
       <Row>
         <h1>Tu carrito de compras</h1>
       </Row>
+      <Row>
+      </Row>
 
       <CartItemList productsAdded={cart} />
 
@@ -124,6 +128,8 @@ const Cart = () => {
             Limpiar carrito
           </Button>
         </Col>
+      <FormShop></FormShop>
+
         <Col md={4} xs={6} className="g-4">
           <Button variant="success" onClick={handleCreateOrder}>
             Generar Orden

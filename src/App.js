@@ -10,7 +10,6 @@ import { NotificationProvider } from "./notification/Notification";
 import Cart from './components/Cart/Cart';
 
 
-
 function App() {
   return (
     <div  >
@@ -18,6 +17,7 @@ function App() {
         <CartProvider>
           <BrowserRouter>
             <NavBar/>
+           
             <Routes>
               <Route path='/' element={<ItemListContainer />} />
               <Route path='/category/:categoryId' element={<ItemListContainer />} />
