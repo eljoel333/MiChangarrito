@@ -40,7 +40,7 @@ const ItemDetailContainer = () => {
     return (
       <>
         <Container fluid>
-          <Row className="justify-content-md-center">
+          <Row className="justify-content-center">
             <PropagateLoader  color="#36D7B7" />
           </Row>
         </Container>
@@ -50,11 +50,11 @@ const ItemDetailContainer = () => {
 
   return (
     <Container>
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-center">
         <h1>Detalle del producto</h1>
       </Row>
 
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-center">
         <ItemDetail {...product} />
       </Row>
     </Container>

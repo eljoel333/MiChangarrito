@@ -23,7 +23,7 @@ const ItemListContainer = (props) => {
     return (
       <>
         <Container fluid>
-          <Row className="justify-content-md-center">
+          <Row className="justify-content-center">
             <PropagateLoader color="#36D7B7" />
           </Row>
         </Container>
@@ -35,7 +35,7 @@ const ItemListContainer = (props) => {
     return (
       <>
         <Container fluid>
-          <Row className="justify-content-md-center">
+          <Row className="justify-content-center">
             <h1>Hubo un error</h1>
           </Row>
         </Container>
@@ -45,7 +45,7 @@ const ItemListContainer = (props) => {
 
   return (
     <Container fluid>
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-center">
         <h1>{props.greeting}</h1>
         {data.length > 0 ? (
           <ItemList products={data} />
