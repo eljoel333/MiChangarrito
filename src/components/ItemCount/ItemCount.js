@@ -1,35 +1,46 @@
-import { useState } from 'react'
-import Button from 'react-bootstrap/Button';
+import { useState } from "react";
+import Button from "react-bootstrap/Button";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
-const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
-   const [quantity, setQuantity] = useState(initial)
+const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
+  const [quantity, setQuantity] = useState(initial);
 
-   const increment = () => {
-       if(quantity < stock) {
-           setQuantity(quantity+1)
-       }
-   }
+  const increment = () => {
+    if (quantity < stock) {
+      setQuantity(quantity + 1);
+    }
+  };
 
-   const decrement = () => {
-       if(quantity > 1) {
-           setQuantity(quantity - 1)
-       }     
-   }
+  const decrement = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
 
-   return(
-       <div className='Counter'>          
-            <div className='Controls'>
-               
-                <Button variant="dark" onClick={increment}>+</Button>
-                <h4 className='Number'>{quantity}</h4>
-                <Button variant="dark" onClick={decrement}>-</Button>
-
-            </div>
-            <div>
-                <Button variant="primary" onClick={() => onAdd(quantity)}>Agregar al carrito</Button>
-            </div>
-       </div>
-   )
-
-}
-export default ItemCount
+  return (
+    <>
+      <Row>
+        <Col>
+        <Button variant="dark" onClick={decrement}>
+            <span>-</span>
+          </Button>
+        <span className="Number">{quantity}</span>
+          <Button variant="dark" onClick={increment}>
+          <span>  + </span>
+          </Button>
+          
+         
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Button variant="primary" onClick={() => onAdd(quantity)}>
+          <span>  Agregar al carrito </span>
+          </Button>
+        </Col>
+      </Row>
+    </>
+  );
+};
+export default ItemCount;

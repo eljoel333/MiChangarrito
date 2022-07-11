@@ -45,12 +45,12 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
               <Card.Text>
               Precio: ${price}
               </Card.Text>
-              <Card.Text className='text-center'>
+              <div className='text-center'>
               { quantityAdded === 0 
                     ?  <ItemCount stock={stock} onAdd={handleOnAdd} />
                     :  <Link to='/cart'>Terminar compra</Link>
                 }
-              </Card.Text>
+              </div>
             </Card.Body>
           </Card>
      

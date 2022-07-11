@@ -22,7 +22,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Feedback from "react-bootstrap/Feedback";
+
 
 const Cart = () => {
   const {

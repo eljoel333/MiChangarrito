@@ -8,9 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
-import PropagateLoader   from "react-spinners/PropagateLoader";
-
-
+import PropagateLoader from "react-spinners/PropagateLoader";
 
 const ItemListContainer = (props) => {
   const notify = () => toast("Wow so easy!");
@@ -24,9 +22,9 @@ const ItemListContainer = (props) => {
   if (isLoading) {
     return (
       <>
-        <Container fluid >
-        <Row  className="justify-content-md-center">
-          <PropagateLoader   color="#36D7B7" />
+        <Container fluid>
+          <Row className="justify-content-md-center">
+            <PropagateLoader color="#36D7B7" />
           </Row>
         </Container>
       </>
@@ -35,27 +33,28 @@ const ItemListContainer = (props) => {
 
   if (error) {
     return (
-        <>
-          <Container fluid >
+      <>
+        <Container fluid>
           <Row className="justify-content-md-center">
-           <h1>Hubo un error</h1>
-            </Row>
-          </Container>
-        </>
-      );
+            <h1>Hubo un error</h1>
+          </Row>
+        </Container>
+      </>
+    );
   }
 
   return (
-    <Container>
-       
-      <h1>{props.greeting}</h1>
-      {data.length > 0 ? (
-        <ItemList products={data} />
-      ) : (
-        <h1>No hay productos</h1>
-      )}
-      {/* <button onClick={notify}>Notify!</button> */}
-      {/* <ToastContainer /> */}
+    <Container fluid>
+      <Row className="justify-content-md-center">
+        <h1>{props.greeting}</h1>
+        {data.length > 0 ? (
+          <ItemList products={data} />
+        ) : (
+          <h1>No hay productos</h1>
+        )}
+        {/* <button onClick={notify}>Notify!</button> */}
+        {/* <ToastContainer /> */}
+      </Row>
     </Container>
   );
 };

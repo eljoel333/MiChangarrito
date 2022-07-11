@@ -1,4 +1,8 @@
 .colorA {
-   color: black;
+   color: black !important;
+   font-size: 25px;
   }
   
+  .sizeCart{
+   width: 25px;
+  }

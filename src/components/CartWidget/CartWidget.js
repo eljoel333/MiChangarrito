@@ -1,7 +1,8 @@
 
 import { useContext } from 'react';
 import CartContext from '../../context/CartContext';
-import { Link, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
+import '../NavBar/NavBar.css'
 
 const CartWidget = () => {
 
@@ -12,7 +13,7 @@ const CartWidget = () => {
 
     return(
         <div className='colorA' onClick={() => navigate('/cart')}>
-            <img src="/images/cart.svg" alt='cart' />
+            <img className='sizeCart' src="/images/cart.svg" alt='cart' />
             { totalQuantity }
         </div>
     );
