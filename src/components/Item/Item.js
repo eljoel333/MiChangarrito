@@ -10,7 +10,7 @@ import Row from 'react-bootstrap/Row';
 
 const Item = ({ id, name, img, price }) => {
   return (
-    <Col  md={4} xs={6} className="g-4">
+    <Col  md={4} xs={6} className="my-3 px-4">
      
        
           <Card>
