@@ -142,7 +142,7 @@ const Cart = () => {
           </Button>
 
       </Row>
-      <Row className="justify-content-md-center">
+      <Row className="justify-content-md-center my-3 px-4">
         <Col md={12} xs={12} className="g-12">
           <h2>Formulario de compra</h2>
           <Form onSubmit={handleSubmit(handleCreateOrder)}>
