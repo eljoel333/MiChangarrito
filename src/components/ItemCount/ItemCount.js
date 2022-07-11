@@ -25,7 +25,7 @@ const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
         <Button variant="dark" onClick={decrement}>
             <span>-</span>
           </Button>
-        <span className="Number">{quantity}</span>
+        <span className="my-3 px-4" >{quantity}</span>
           <Button variant="dark" onClick={increment}>
           <span>  + </span>
           </Button>
@@ -33,7 +33,7 @@ const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
          
         </Col>
       </Row>
-      <Row>
+      <Row className="my-3 px-4" >
         <Col>
           <Button variant="primary" onClick={() => onAdd(quantity)}>
           <span>  Agregar al carrito </span>
