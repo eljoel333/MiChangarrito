@@ -135,18 +135,18 @@ const Cart = () => {
       <Row className="justify-content-center">
         <h3>Total: ${total}</h3>
       </Row>
-      <Row className="justify-content-md-center">
-        <Col md={4} xs={6} className="g-4">
+      <Row className="justify-content-center">
+       
           <Button variant="danger" onClick={() => clearCart()}>
             Limpiar carrito
           </Button>
-        </Col>
+
       </Row>
       <Row className="justify-content-md-center">
-        <Col md={4} xs={6} className="g-4">
+        <Col md={12} xs={12} className="g-12">
           <h2>Formulario de compra</h2>
           <Form onSubmit={handleSubmit(handleCreateOrder)}>
-            <Form.Group className="mb-3" controlId="name">
+            <Form.Group className="mb-12" controlId="name">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 type="text"
