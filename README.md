@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Imagen gif
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Imagen gif de proyecto en esta direccion: public\images\michangarritogif.gif
 
 ## Available Scripts
 
