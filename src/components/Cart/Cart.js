@@ -114,8 +114,11 @@ const Cart = () => {
       <Container>
         <Row className="justify-content-center">
           <h1>Se está generando su orden...</h1>
-          <PropagateLoader color="#36D7B7" />
+          
 
+        </Row>
+        <Row className="justify-content-center">
+        <PropagateLoader color="#36D7B7" />
         </Row>
       </Container>
     );
