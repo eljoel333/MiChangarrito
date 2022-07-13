@@ -18,6 +18,17 @@ const ItemCount = ({ stock = 0, initial = 1, onAdd }) => {
     }
   };
 
+  if (stock===0)
+  {
+    return(
+      <>
+        <h1>Próximamente</h1> 
+        <h3>Sin inventario por el momento... :(</h3> 
+      </>
+    )
+    
+    ;
+  }
   return (
     <>
       <Row>
