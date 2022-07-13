@@ -18,11 +18,11 @@ import {
 } from "firebase/firestore";
 import { db } from "../../services/firebase/index";
 import Button from "react-bootstrap/Button";
-import { ToastContainer, toast } from "react-toastify";
+import {  toast } from "react-toastify";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-
+import PropagateLoader from "react-spinners/PropagateLoader";
 
 const Cart = () => {
   const {
@@ -36,7 +36,6 @@ const Cart = () => {
 
   const total = getTotal();
 
-  const setNotification = useNotification();
 
   const handleCreateOrder = (data) => {
     console.log(data);
@@ -111,7 +110,15 @@ const Cart = () => {
   // }
 
   if (loading) {
-    return <h1>Se esta generando su orden...</h1>;
+    return (
+      <Container>
+        <Row className="justify-content-center">
+          <h1>Se está generando su orden...</h1>
+          <PropagateLoader color="#36D7B7" />
+
+        </Row>
+      </Container>
+    );
   }
 
   if (totalQuantity === 0) {
@@ -136,11 +143,9 @@ const Cart = () => {
         <h3>Total: ${total}</h3>
       </Row>
       <Row className="justify-content-center">
-       
-          <Button variant="danger" onClick={() => clearCart()}>
-            Limpiar carrito
-          </Button>
-
+        <Button variant="danger" onClick={() => clearCart()}>
+          Limpiar carrito
+        </Button>
       </Row>
       <Row className="justify-content-md-center my-3 px-4">
         <Col md={12} xs={12} className="g-12">

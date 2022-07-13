@@ -35,15 +35,15 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
             <Card.Body>
               <Card.Title>{name}</Card.Title>
               <Card.Title>
-              Categoria: {category}
+              <strong>Categoria: </strong>{category}
 
               </Card.Title>
               <Card.Text className='text-justify'>
-              Descripción: {description}
+              <strong>Descripción: </strong> {description}
               </Card.Text>
-              <Card.Title></Card.Title>
+             
               <Card.Text>
-              Precio: ${price}
+              <strong> Precio: </strong>${price}
               </Card.Text>
               <div className='text-center'>
               { quantityAdded === 0 
